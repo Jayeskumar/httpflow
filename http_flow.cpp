@@ -15,6 +15,7 @@
 #include "stream_parser.h"
 #include "data_link.h"
 
+//version 0.0.9
 #define HTTPFLOW_VERSION "0.0.9"
 
 #define MAXIMUM_SNAPLEN 262144
@@ -139,6 +140,7 @@ static bool process_ipv4(struct packet_info *packet, const u_char *content, size
 
     size_t ip_payload_len;
     if (ip6_header) {
+        
         if (ip6_header->ip6_nxt != IPPROTO_TCP) {
             return false;
         }
